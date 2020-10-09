@@ -20,13 +20,11 @@
     <!--Added padding: move to CSS later-->
     <div class="container">
       <!--Weather-->
-      <div class="weather">
+      <div class="weather" style="background-color: #fef7af">
+        <!--Move style to CSS-->
+
         <!--Nav-->
-        <nav
-          class="navbar navbar-light"
-          style="background-color: #fef7af"
-          style="font-family: monospace"
-        >
+        <nav class="navbar navbar-light">
           <form class="form-inline">
             <input
               class="form-control mr-sm-2"
@@ -48,6 +46,91 @@
           </a>
         </nav>
         <!--End of Nav-->
+
+        <!--row 1-->
+        <div class="row">
+          <div class="col-5" style="background-color: bisque">
+            <ul>
+              <li id="City">Philadelphia</li>
+              <li id="Day">Friday</li>
+              <li id="Time">12:00</li>
+              <li id="Description">Clear</li>
+            </ul>
+          </div>
+
+          <!--End of col-5-->
+          <div class="col-7" style="background-color: darkcyan">
+            <div class="card-group">
+              <!--Set each card background to #fef7af-->
+              <div class="card">
+                <img
+                  class="card-img-top"
+                  src="img/logo.png"
+                  alt="Card image cap"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Mon</h5>
+                  <p class="card-text">monday weather</p>
+                </div>
+              </div>
+              <div class="card">
+                <img
+                  class="card-img-top"
+                  src="img/logo.png"
+                  alt="Card image cap"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Tue</h5>
+                  <p class="card-text">tuesday weather</p>
+                </div>
+              </div>
+              <div class="card">
+                <img
+                  class="card-img-top"
+                  src="img/logo.png"
+                  alt="Card image cap"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Wed</h5>
+                  <p class="card-text">wednesday weather</p>
+                </div>
+              </div>
+              <div class="card">
+                <img
+                  class="card-img-top"
+                  src="img/logo.png"
+                  alt="Card image cap"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Thu</h5>
+                  <p class="card-text">thursday weather</p>
+                </div>
+              </div>
+              <div class="card">
+                <img
+                  class="card-img-top"
+                  src="img/logo.png"
+                  alt="Card image cap"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Fri</h5>
+                  <p class="card-text">friday weather</p>
+                </div>
+              </div>
+            </div>
+            <!--End of card-group-->
+          </div>
+          <!--End of col-7-->
+        </div>
+        <!--End of row-->
+
+        <!--row 2-->
+        <div class="row" style="background-color: pink">
+          <div class="col-5">
+            <!--Weather Icon here-->
+            Inside col-5
+          </div>
+        </div>
       </div>
       <!--End of weather-->
       <small> <a href="#">Open-source</a> code by Jiayi Yin </small>
