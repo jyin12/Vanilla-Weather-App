@@ -16,10 +16,41 @@
     <link rel="stylesheet" href="src/styles.css" />
     <title>Weather</title>
   </head>
-  <body>
+  <body style="padding-top: 20px">
+    <!--Added padding: move to CSS later-->
     <div class="container">
-      <h1>Hello World</h1>
-      <a href="" class="btn btn-primary">Click Me</a>
+      <!--Weather-->
+      <div class="weather">
+        <!--Nav-->
+        <nav
+          class="navbar navbar-light"
+          style="background-color: #fef7af"
+          style="font-family: monospace"
+        >
+          <form class="form-inline">
+            <input
+              class="form-control mr-sm-2"
+              type="search"
+              placeholder="Search"
+            />
+            <button class="searchBtn" type="submit">Search</button>
+          </form>
+          <a class="navbar-brand">
+            <!--TODO: Change font-->
+            Pompompurin Weather
+            <img
+              src="img/logo.png"
+              width="30"
+              height="30"
+              class="d-inline-block align-top"
+              alt=""
+            />
+          </a>
+        </nav>
+        <!--End of Nav-->
+      </div>
+      <!--End of weather-->
+      <small> <a href="#">Open-source</a> code by Jiayi Yin </small>
     </div>
     <!--End of container-->
 
