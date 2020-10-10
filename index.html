@@ -14,17 +14,18 @@
 
     <!--CSS link-->
     <link rel="stylesheet" href="src/styles.css" />
-    <title>Weather</title>
+    <title>Weather</title>   
   </head>
+  
   <body style="padding-top: 20px">
-    <!--Added padding: move to CSS later-->
-    <div class="container">
+    <!--Added padding: move to CSS later (temporary put color here)-->
+    <div class="container" style="background-color: #F7DD78">
       <!--Weather-->
-      <div class="weather" style="background-color: #fef7af">
+      <div class="weather" style="background-color: #F7DD78">
         <!--Move style to CSS-->
 
         <!--Nav-->
-        <nav class="navbar navbar-light">
+        <nav class="navbar navbar-light" style="background-color: #F7DD78">
           <form class="form-inline">
             <input
               class="form-control mr-sm-2"
@@ -57,7 +58,14 @@
               <li id="Description">Clear</li>
             </ul>
             <br />
-            <p id="temp">75</p>
+            <!--Make "75" big font size-->
+            <p id="temp">
+              75
+              <span id="temp-unit">
+                <span id="fahrenheit">°F</span> | <span id="celcius">°C</span>
+              </span>
+            </p>
+            <!--End of temp-->
           </div>
           <!--End of col-5-->
 
@@ -124,7 +132,7 @@
           </div>
           <!--End of col-7-->
         </div>
-        <!--End of row-->
+        <!--End of row1-->
 
         <!--row 2-->
         <div class="row">
@@ -135,10 +143,12 @@
           <!--End of col-5-->
 
           <div class="col-7" style="background-color: salmon">
-            <img src="img/logo.png" alt="pom1" />
+            <!--Place image far left-->
+            <img src="img/pompompurin2.png" alt="pom1" width="80%" />
           </div>
           <!--End of col-7-->
         </div>
+        <!--End of row2-->
       </div>
       <!--End of weather-->
       <small> <a href="#">Open-source</a> code by Jiayi Yin </small>
