@@ -1,3 +1,47 @@
-h1 {
-  color: pink;
+body {
+  padding-top: 20px;
+}
+
+/*Added padding: move to CSS later (temporary put color here)*/
+.container {
+  max-width: 1000px;
+  background-color: #f7f1bf;
+  border: 3px solid #613437;
+  border-radius: 20px;
+}
+
+#logo {
+  /*font-family: "Staatliches", cursive; <--This will be for weatherInfo font*/
+  color: #613437;
+  font-family: "Pacifico", cursive;
+  font-size: 1.8rem;
+}
+
+#logoPic {
+  margin-top: 2px;
+}
+
+input {
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+.searchBtn,
+.currLocation {
+  background-color: transparent;
+  border-radius: 30px;
+  border: 1.5px solid #613437;
+  color: #613437;
+}
+
+.searchBtn:hover,
+.currLocation:hover {
+  background-color: #613437;
+  color: #f7f3ce;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+#city {
+  line-height: 30px;
 }
