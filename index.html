@@ -12,6 +12,10 @@
       crossorigin="anonymous"
     />
 
+    <!--Google font-->
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
     <!--CSS link-->
     <link rel="stylesheet" href="src/styles.css" />
     <title>Weather</title>   
@@ -24,17 +28,16 @@
         <!--Nav-->
         <nav class="navbar navbar-light" >
           <a class="navbar-brand">
-            <!--TODO: Change font-->
-            Pompompurin Weather
-            <img src="img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="" />
+            <span id="logo">Pompompurin Weather</span>
+            <img src="img/logo.png" width="40" height="40" class="d-inline-block align-top" id="logoPic" alt="" />
           </a>
-          <form class="form-inline">
+          <form class="formInline">
             <input
-              class="form-control mr-sm-2"
               type="search"
               placeholder="Search"
             />
             <button class="searchBtn" type="submit">Search</button>
+            <button class="currLocation" type="submit">Current Location</button>
           </form>
         </nav>
         <!--End of Nav-->
@@ -136,7 +139,7 @@
           </div>
           <!--End of col-5-->
 
-          <div class="col-7" style="background-color: salmon">
+          <div class="col-7">
             <!--Place image far left-->
             <img src="img/pompompurin2.png" alt="pom1" width="80%" />
           </div>
@@ -149,6 +152,7 @@
     </div>
     <!--End of container-->
 
+    <!--Javascript link-->
     <script src="src/app.js"></script>
   </body>
 </html>
