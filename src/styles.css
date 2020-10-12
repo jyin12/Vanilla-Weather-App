@@ -11,8 +11,7 @@ body {
 }
 
 #logo {
-  /*font-family: "Staatliches", cursive; <--This will be for weatherInfo font*/
-  color: #613437;
+  color: #451110;
   font-family: "Pacifico", cursive;
   font-size: 1.8rem;
 }
@@ -34,14 +33,64 @@ input {
   color: #613437;
 }
 
-.searchBtn:hover,
-.currLocation:hover {
+.searchBtn:hover {
   background-color: #613437;
   color: #f7f3ce;
   cursor: pointer;
   transition: all 200ms ease-in-out;
 }
 
-#city {
-  line-height: 30px;
+.currLocation:hover {
+  background-color: #f7dc77;
+  color: #613437; /*FIX THIS COLOR LATER*/
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+#info #city {
+  line-height: 35px;
+}
+
+#sun {
+  font-size: 100px;
+}
+
+#tempInfo {
+  margin-top: 20px;
+}
+
+#info,
+#tempInfo {
+  font-family: "Fredoka One", cursive;
+  color: #613437;
+}
+
+#tempInfo #temperature {
+  font-size: 70px;
+  margin-left: 20px;
+}
+
+#tempInfo #temp-unit {
+  position: relative;
+  top: -40px;
+}
+
+a {
+  color: #613437;
+}
+
+a:hover {
+  color: #613437;
+}
+
+.card-group {
+  color: #613437;
+  font-family: "Fredoka One", cursive;
+}
+
+#extraInfo {
+  font-family: "Fredoka One", cursive;
+  color: #613437;
+  margin-top: 50px;
+  text-align: center;
 }
