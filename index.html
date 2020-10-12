@@ -36,7 +36,7 @@
           <form class="formInline" id="searchForm">
             <input
               type="search"
-              placeholder="Search"
+              placeholder="Type a city..."
               id = "city-search"
             />
             <button class="searchBtn" type="submit">Search</button>
@@ -54,7 +54,7 @@
           <div class="col-5">
             <div id="info">
               <h1 id="city"></h1>
-              <h3>Last updated: <span id="timeDay"></span></h3>
+              <h3 id="updated">Last updated: <span id="timeDay"></span></h3>
               <h5 id="description"></h5>
             </div>
             <!--End of info-->
@@ -142,11 +142,12 @@
         <div class="row">
           <div class="col-5">
             <p id="extraInfo">
+              <span class="hi">HI: </span>
+              <span class="hiTemp"></span>
               <br />
-              <!--Currently not doing preciptation-->
-              <span class="rain">Preciptation: </span>
-              <span class="precipInfo">60</span>%
-              <br />
+              <span class="lo">LO: </span>
+              <span class="loTemp"></span>
+              <br /><br />
               <span class="humidity">Humidity: </span>
               <span class="humidInfo"></span>%
               <br />
