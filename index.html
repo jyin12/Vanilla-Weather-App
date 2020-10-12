@@ -38,6 +38,7 @@
               type="search"
               placeholder="Type a city..."
               id = "city-search"
+              autocomplete="off"
             />
             <button class="searchBtn" type="submit">Search</button>
             <button class="currLocation" type="submit">Current Location</button>
@@ -56,15 +57,17 @@
               <h1 id="city"></h1>
               <h3 id="updated">Last updated: <span id="timeDay"></span></h3>
               <h5 id="description"></h5>
+              <br />
             </div>
             <!--End of info-->
             
             <p id="tempInfo">
-              <i class="fas fa-cloud" id="icon"></i>
+              <!--<i class="fas fa-cloud" id="icon"></i>-->
+              <img src="" alt="" id="icon" class="float-left">
               <span id="temperature"></span>
               <span id="temp-unit">
                 <span id="fahrenheit">
-                  <a href="#" id="f">°F</a>
+                  <a href="#" id="f" class="active">°F</a>
                 </span>
                  | 
                  <span id="celcius">
@@ -166,7 +169,7 @@
         <!--End of row2-->
       </div>
       <!--End of weather-->
-      <small> <a href="#">Open-source</a> code by Jiayi Yin </small>
+      <small> <a href="#" class="source">Open-source</a> code by Jiayi Yin </small>
     </div>
     <!--End of container-->
 
