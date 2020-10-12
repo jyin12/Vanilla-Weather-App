@@ -50,10 +50,15 @@ input {
 
 #info #city {
   line-height: 35px;
+  font-size: 3.5rem;
 }
 
 #info #description {
   text-transform: capitalize;
+}
+
+#updated {
+  font-size: 1.5rem;
 }
 
 #icon {
@@ -102,4 +107,17 @@ a:hover {
   margin-top: 50px;
   text-align: center;
   color: #b48871;
+}
+
+.hiTemp,
+.hi {
+  color: #f5b212;
+  font-size: 30px;
+  line-height: 15px;
+}
+
+.loTemp,
+.lo {
+  color: #f7d84d;
+  font-size: 20px;
 }
