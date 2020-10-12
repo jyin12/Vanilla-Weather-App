@@ -19,6 +19,9 @@
     <!--Logo-->
     <script src="https://kit.fontawesome.com/af4bfbe93b.js" crossorigin="anonymous"></script>
 
+    <!--AJAX-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <!--CSS link-->
     <link rel="stylesheet" href="src/styles.css" />
     <title>Weather</title>   
@@ -49,18 +52,18 @@
         <div class="row">
           <div class="col-5">
             <div id="info">
-              <h1 id="city">Philadelphia</h1>
+              <h1 id="city"></h1>
               <h3 id="timeDay">
                 <span id="day">Monday</span>,
                 <span id="time">12:00</span>
               </h3>
-              <h5 id="description">Clear</h5>
+              <h5 id="description"></h5>
             </div>
             <!--End of info-->
             
             <p id="tempInfo">
               <i class="far fa-sun" id="sun"></i>
-              <span id="temperature">75</span>
+              <span id="temperature"></span>
               <span id="temp-unit">
                 <span id="fahrenheit">
                   <a href="#" id="f">°F</a>
@@ -76,15 +79,11 @@
           </div>
           <!--End of col-5-->
 
-          <div class="col-7" style="background-color: darkcyan">
+          <div class="col-7">
             <div class="card-group">
               <!--Set each card background to #fef7af or whatever div weather color is. Add icons!-->
               <div class="card">
-                <img
-                  class="card-img-top"
-                  src="img/logo.png"
-                  alt="Card image cap"
-                />
+                <img class="card-img-top" src="img/logo.png" alt="Card image cap" />
                 <div class="card-body">
                   <h5 class="card-title">Mon</h5>
                   <p class="card-text">monday weather</p>
@@ -145,14 +144,15 @@
         <div class="row">
           <div class="col-5">
             <p id="extraInfo">
+              <!--Currently not doing preciptation-->
               <span class="rain">Preciptation: </span>
               <span class="precipInfo">60</span>%
               <br />
               <span class="humidity">Humidity: </span>
-              <span class="humidInfo">20</span>%
+              <span class="humidInfo"></span>%
               <br />
               <span class="Wind">Wind: </span>
-              <span class="windInfo">6 </span>mph
+              <span class="windInfo"> </span>mph
             </p>
           </div>
           <!--End of col-5-->
