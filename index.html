@@ -33,10 +33,11 @@
       <div class="weather">
         <!--Nav-->
         <nav class="navbar navbar-light" >
-          <form class="formInline">
+          <form class="formInline" id="searchForm">
             <input
               type="search"
               placeholder="Search"
+              id = "city-search"
             />
             <button class="searchBtn" type="submit">Search</button>
             <button class="currLocation" type="submit">Current Location</button>
@@ -53,16 +54,13 @@
           <div class="col-5">
             <div id="info">
               <h1 id="city"></h1>
-              <h3 id="timeDay">
-                <span id="day">Monday</span>,
-                <span id="time">12:00</span>
-              </h3>
+              <h3>Last updated: <span id="timeDay"></span></h3>
               <h5 id="description"></h5>
             </div>
             <!--End of info-->
             
             <p id="tempInfo">
-              <i class="far fa-sun" id="sun"></i>
+              <i class="fas fa-cloud" id="icon"></i>
               <span id="temperature"></span>
               <span id="temp-unit">
                 <span id="fahrenheit">
@@ -144,6 +142,7 @@
         <div class="row">
           <div class="col-5">
             <p id="extraInfo">
+              <br />
               <!--Currently not doing preciptation-->
               <span class="rain">Preciptation: </span>
               <span class="precipInfo">60</span>%
