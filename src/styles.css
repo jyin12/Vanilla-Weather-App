@@ -41,9 +41,10 @@ input {
 }
 
 .currLocation:hover {
-  background-color: #f7dc77;
-  color: #613437; /*FIX THIS COLOR LATER*/
+  background-color: #b48871;
+  color: #f7f3ce;
   cursor: pointer;
+  border: 1.5px solid #b48871;
   transition: all 200ms ease-in-out;
 }
 
@@ -55,7 +56,7 @@ input {
   text-transform: capitalize;
 }
 
-#sun {
+#icon {
   font-size: 100px;
 }
 
