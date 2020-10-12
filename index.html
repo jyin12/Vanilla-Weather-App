@@ -13,8 +13,11 @@
     />
 
     <!--Google font-->
-    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+
+    <!--Logo-->
+    <script src="https://kit.fontawesome.com/af4bfbe93b.js" crossorigin="anonymous"></script>
 
     <!--CSS link-->
     <link rel="stylesheet" href="src/styles.css" />
@@ -27,10 +30,6 @@
       <div class="weather">
         <!--Nav-->
         <nav class="navbar navbar-light" >
-          <a class="navbar-brand">
-            <span id="logo">Pompompurin Weather</span>
-            <img src="img/logo.png" width="40" height="40" class="d-inline-block align-top" id="logoPic" alt="" />
-          </a>
           <form class="formInline">
             <input
               type="search"
@@ -39,12 +38,16 @@
             <button class="searchBtn" type="submit">Search</button>
             <button class="currLocation" type="submit">Current Location</button>
           </form>
+          <a class="navbar-brand">
+            <span id="logo">Pompompurin Weather</span>
+            <img src="img/logo.png" width="40" height="40" class="d-inline-block align-top" id="logoPic" alt="" />
+          </a>
         </nav>
         <!--End of Nav-->
 
         <!--row 1-->
         <div class="row">
-          <div class="col-5" style="background-color: bisque">
+          <div class="col-5">
             <div id="info">
               <h1 id="city">Philadelphia</h1>
               <h3 id="timeDay">
@@ -55,14 +58,21 @@
             </div>
             <!--End of info-->
             
-            <!--Make "75" big font size-->
-            <p id="temp">
-              75
+            <p id="tempInfo">
+              <i class="far fa-sun" id="sun"></i>
+              <span id="temperature">75</span>
               <span id="temp-unit">
-                <span id="fahrenheit">°F</span> | <span id="celcius">°C</span>
+                <span id="fahrenheit">
+                  <a href="#" id="f">°F</a>
+                </span>
+                 | 
+                 <span id="celcius">
+                  <a href="#" id="c">°C</a>
+                </span>
               </span>
+              <!--End of tempInfo-->
             </p>
-            <!--End of temp-->
+            <!--End of tempInfo-->
           </div>
           <!--End of col-5-->
 
@@ -133,15 +143,23 @@
 
         <!--row 2-->
         <div class="row">
-          <div class="col-5" style="background-color: pink">
-            <!--Weather Icon here-->
-            Inside col-5
+          <div class="col-5">
+            <p id="extraInfo">
+              <span class="rain">Preciptation: </span>
+              <span class="precipInfo">60</span>%
+              <br />
+              <span class="humidity">Humidity: </span>
+              <span class="humidInfo">20</span>%
+              <br />
+              <span class="Wind">Wind: </span>
+              <span class="windInfo">6 </span>mph
+            </p>
           </div>
           <!--End of col-5-->
 
           <div class="col-7">
             <!--Place image far left-->
-            <img src="img/pompompurin2.png" alt="pom1" width="80%" />
+            <img src="img/pompompurin2.png" alt="pom1" width="80%" style="margin-left: 35px;"/>
           </div>
           <!--End of col-7-->
         </div>
