@@ -49,7 +49,7 @@ input {
 }
 
 #info #city {
-  line-height: 35px;
+  line-height: 45px;
   font-size: 3.5rem;
 }
 
@@ -62,7 +62,6 @@ input {
 }
 
 #icon {
-  font-size: 100px;
 }
 
 #tempInfo {
@@ -76,21 +75,28 @@ input {
 }
 
 #tempInfo #temperature {
-  font-size: 70px;
+  font-size: 75px;
   margin-left: 20px;
 }
 
 #tempInfo #temp-unit {
   position: relative;
   top: -40px;
+  color: #b48871;
 }
 
-a {
+#temp-unit .active {
   color: #613437;
+  cursor: default;
 }
 
-a:hover {
-  color: #613437;
+#f,
+#c {
+  color: #b48871;
+}
+
+#temp-unit .active:hover {
+  text-decoration: none;
 }
 
 .card-group {
