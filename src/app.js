@@ -1,5 +1,12 @@
 function formatDate(timeStamp){
     let date = new Date(timeStamp);
+    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    let day = days[date.getDay()];
+    return `${day} ${formatHours(timeStamp)}`;
+}
+
+function formatHours(timeStamp){
+  let date = new Date(timeStamp);
     let hours = date.getHours();
     if(hours < 0){
         hours = `0${hours}`;
@@ -8,16 +15,13 @@ function formatDate(timeStamp){
     if(minutes < 10){
         minutes = `0${minutes}`;
     }
-    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    let day = days[date.getDay()];
-    return `${day} ${hours}:${minutes}`;
+  return `${hours}:${minutes}`;
 }
 
 function displayWeatherInfo(response){
-    console.log(response.data);
     //Sets unit to imperial by default
-    fahrenheit.classList.remove("active");
-    celcius.classList.add("active");
+    fahrenheit.classList.add("active");
+    celcius.classList.remove("active");
     //Unit conversion
     fahrenheitTemperature = response.data.main.temp;
     hiFahrenheitTemp = response.data.main.temp_max;
@@ -55,8 +59,7 @@ function displayWeatherInfo(response){
     let lowTempElement = document.querySelector(".loTemp");
     lowTempElement.innerHTML = Math.round(response.data.main.temp_min);
 
-
-    //Icon: finish later
+    //Icons
     let iconElement = document.querySelector("#icon");
     if(response.data.weather[0].icon == "01d"){
       iconElement.setAttribute("src", "img/sun.png");
@@ -104,14 +107,42 @@ function displayWeatherInfo(response){
     }
 }
 
+//TODO
+function displayForecast(response){
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = null;
+  let forecast = null;  
+  
+  for(let i = 0; i < 4; i++){
+    /*hiForecastTemp = response.data.list[i].main.temp_max;
+    loForecastTemp = response.data.list[i].main.temp_min;*/
+    forecast = response.data.list[i];
+
+    forecastElement.innerHTML += `
+    <div class="col-3">
+      <h4 id="day1">${formatHours(forecast.dt * 1000)}</h4>
+      <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" alt="" class="iconForecast" width="45" height="45">
+      <div class="forecastTemp">
+        <span class="tempForecastHi">${Math.round(forecast.main.temp_max)}</span>°
+        <span class="tempForecastLo">${Math.round(forecast.main.temp_min)}</span>°
+      </div>
+    </div>`;
+  }
+}
+
 function searchCity(event) {
   event.preventDefault();
+  //Weather
   let searchInput = document.querySelector("#city-search");
   let apiKey = "65a6ca53c94284a78ade1834db48e6ab";
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&appid=${apiKey}&units=imperial`;
-
+  
+  //Forecast
+  forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${searchInput.value}&appid=${apiKey}&units=imperial`;
+  
   if (searchInput.value) {
     axios.get(url).then(displayWeatherInfo);
+    axios.get(forecastUrl).then(displayForecast);
   }
 }
 
@@ -127,21 +158,32 @@ function displayFahreheit(event){
     hiTempElement.innerHTML = Math.round(hiFahrenheitTemp);
     let loTempElement = document.querySelector(".loTemp");
     loTempElement.innerHTML = Math.round(loFahrenheitTemp);
+
+    /*let hiForecastElement = document.querySelector(".tempForecastHi");
+    hiForecastElement.innerHTML = Math.round(hiForecastTemp);
+    let loForecastElement = document.querySelector(".tempForecastLo");
+    loForecastElement.innerHTML = Math.round(loForecastTemp);*/
 }
 function displayCelcius(event){
     event.preventDefault();
     let tempElement = document.querySelector("#temperature");
     let hiTempElement = document.querySelector(".hiTemp");
     let loTempElement = document.querySelector(".loTemp");
+    //let hiForecastElement = document.querySelector(".tempForecastHi");
+    //let loForecastElement = document.querySelector(".tempForecastLo");
     //remove active class from fahrenheit link
     fahrenheit.classList.remove("active");
     celcius.classList.add("active");
     let celciusConversion = (fahrenheitTemperature - 32) * 5 / 9;
     let celciusHiTemp = (hiFahrenheitTemp - 32) * 5 / 9;
     let celciusLoTemp = (loFahrenheitTemp - 32) * 5 / 9;
+    //let foreCastHiTemp = (hiForecastTemp - 32) * 5 / 9;
+    //let forecastLoTemp = (loForecastTemp - 32) * 5 / 9;
     tempElement.innerHTML = Math.round(celciusConversion);
     hiTempElement.innerHTML = Math.round(celciusHiTemp);
     loTempElement.innerHTML = Math.round(celciusLoTemp);
+    //hiForecastElement.innerHTML = Math.round(foreCastHiTemp);
+    //loForecastElement.innerHTML = Math.round(forecastLoTemp);
 }
 
 //Current location info
@@ -152,6 +194,8 @@ function currentPosition(position) {
   let apiKey = "65a6ca53c94284a78ade1834db48e6ab";
   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
   axios.get(url).then(displayWeatherInfo);
+  let forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${api}&units=imperial`;
+  axios.get(forecastUrl).then(displayForecast);  
 }
 
 function getCurrentPos() {
@@ -165,6 +209,8 @@ let fahrenheit = document.querySelector("#f");
 fahrenheit.addEventListener("click", displayFahreheit);
 let celcius = document.querySelector("#c")
 celcius.addEventListener("click", displayCelcius);
+//let hiForecastTemp = null;
+//let loForecastTemp = null;
 let hiFahrenheitTemp = null;
 let loFahrenheitTemp = null;
 let fahrenheitTemperature = null;  //global variable
@@ -178,3 +224,7 @@ let cityName = "Philadelphia";
 let api = "65a6ca53c94284a78ade1834db48e6ab";
 let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${api}&units=imperial`;
 axios.get(apiURL).then(displayWeatherInfo);
+
+//Default forecast
+apiURL = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${api}&units=imperial`;
+axios.get(apiURL).then(displayForecast);
