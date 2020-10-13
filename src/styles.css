@@ -61,9 +61,6 @@ input {
   font-size: 1.5rem;
 }
 
-#icon {
-}
-
 #tempInfo {
   margin-top: 20px;
 }
@@ -99,9 +96,23 @@ input {
   text-decoration: none;
 }
 
-.card-group {
+#forecast {
   color: #613437;
   font-family: "Fredoka One", cursive;
+}
+
+.forecastLo,
+.forecastHi {
+  font-size: 15px;
+}
+
+.tempForecastLo {
+  color: #b48871;
+}
+
+.col-2 {
+  margin-left: 10px;
+  padding-left: 25px;
 }
 
 .card {
