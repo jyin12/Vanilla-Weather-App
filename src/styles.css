@@ -1,13 +1,13 @@
 body {
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
-/*Added padding: move to CSS later (temporary put color here)*/
-.container {
+.weather {
   max-width: 1000px;
   background-color: #f7f1bf;
   border: 3px solid #613437;
   border-radius: 20px;
+  margin: 10px auto;
 }
 
 #logo {
@@ -62,13 +62,14 @@ input {
 }
 
 #tempInfo {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 #info,
 #tempInfo {
   font-family: "Fredoka One", cursive;
   color: #613437;
+  margin-left: 15px;
 }
 
 #tempInfo #temperature {
@@ -137,4 +138,9 @@ input {
 .lo {
   color: #f7d84d;
   font-size: 20px;
+}
+
+.weather-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
 }
