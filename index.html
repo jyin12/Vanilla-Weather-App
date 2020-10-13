@@ -29,95 +29,98 @@
 
   <body>
     <div class="container">
-      <!--Weather-->
-      <div class="weather">
-        <!--Nav-->
-        <nav class="navbar navbar-light" >
-          <form class="formInline" id="searchForm">
-            <input
-              type="search"
-              placeholder="Type a city..."
-              id = "city-search"
-              autocomplete="off"
-            />
-            <button class="searchBtn" type="submit">Search</button>
-            <button class="currLocation" type="submit">Current Location</button>
-          </form>
-          <a class="navbar-brand">
-            <span id="logo">Pompompurin Weather</span>
-            <img src="img/logo.png" width="40" height="40" class="d-inline-block align-top" id="logoPic" alt="" />
-          </a>
-        </nav>
-        <!--End of Nav-->
+      <div class="weather-wrapper">
+        <!--Weather-->
+        <div class="weather">
+          <!--Nav-->
+          <nav class="navbar navbar-light" >
+            <form class="formInline" id="searchForm">
+              <input
+                type="search"
+                placeholder="Type a city..."
+                id = "city-search"
+                autocomplete="off"
+              />
+              <button class="searchBtn" type="submit">Search</button>
+              <button class="currLocation" type="submit">Current Location</button>
+            </form>
+            <a class="navbar-brand">
+              <span id="logo">Pompompurin Weather</span>
+              <img src="img/logo.png" width="40" height="40" class="d-inline-block align-top" id="logoPic" alt="" />
+            </a>
+          </nav>
+          <!--End of Nav-->
 
-        <!--row 1-->
-        <div class="row">
-          <div class="col-6">
-            <div id="info">
-              <h1 id="city"></h1>
-              <h3 id="updated">Last updated: <span id="timeDay"></span></h3>
-              <h5 id="description"></h5>
-              <br />
-            </div>
-            <!--End of info-->
-            
-            <p id="tempInfo">
-              <!--<i class="fas fa-cloud" id="icon"></i>-->
-              <img src="" alt="" id="icon" class="float-left">
-              <span id="temperature"></span>
-              <span id="temp-unit">
-                <span id="fahrenheit">
-                  <a href="#" id="f" class="active">°F</a>
+          <!--row 1-->
+          <div class="row">
+            <div class="col-6">
+              <div id="info">
+                <h1 id="city"></h1>
+                <h3 id="updated">Last updated: <span id="timeDay"></span></h3>
+                <h5 id="description"></h5>
+                <br />
+              </div>
+              <!--End of info-->
+              
+              <p id="tempInfo">
+                <!--<i class="fas fa-cloud" id="icon"></i>-->
+                <img src="" alt="" id="icon" class="float-left">
+                <span id="temperature"></span>
+                <span id="temp-unit">
+                  <span id="fahrenheit">
+                    <a href="#" id="f" class="active">°F</a>
+                  </span>
+                  | 
+                  <span id="celcius">
+                    <a href="#" id="c">°C</a>
+                  </span>
                 </span>
-                 | 
-                 <span id="celcius">
-                  <a href="#" id="c">°C</a>
-                </span>
-              </span>
+                <!--End of tempInfo-->
+              </p>
               <!--End of tempInfo-->
-            </p>
-            <!--End of tempInfo-->
-          </div>
-          <!--End of col-6-->
+            </div>
+            <!--End of col-6-->
 
-          <div class="col-6">
-            <br /><br /><br /><br />
-            
-            <!--Forecasting-->
-            <div class="row" id="forecast"></div>
+            <div class="col-6">
+              <br /><br /><br /><br />
+
+              <!--Forecasting-->
+              <div class="row" id="forecast"></div>
+            </div>
           </div>
+          <!--End of row1-->
+
+          <!--row 2-->
+          <div class="row">
+            <div class="col-6">
+              <p id="extraInfo">
+                <span class="hi">HI: </span>
+                <span class="hiTemp"></span>
+                <br />
+                <span class="lo">LO: </span>
+                <span class="loTemp"></span>
+                <br /><br />
+                <span class="humidity">Humidity: </span>
+                <span class="humidInfo"></span>%
+                <br />
+                <span class="Wind">Wind: </span>
+                <span class="windInfo"> </span>mph
+              </p>
+            </div>
+            <!--End of col-6-->
+
+            <div class="col-6">
+              <!--Place image far left-->
+              <img src="img/pompompurin2.png" alt="pom1" width="90%"/>
+            </div>
+            <!--End of col-6-->
+          </div>
+          <!--End of row2-->
         </div>
-        <!--End of row1-->
-
-        <!--row 2-->
-        <div class="row">
-          <div class="col-6">
-            <p id="extraInfo">
-              <span class="hi">HI: </span>
-              <span class="hiTemp"></span>
-              <br />
-              <span class="lo">LO: </span>
-              <span class="loTemp"></span>
-              <br /><br />
-              <span class="humidity">Humidity: </span>
-              <span class="humidInfo"></span>%
-              <br />
-              <span class="Wind">Wind: </span>
-              <span class="windInfo"> </span>mph
-            </p>
-          </div>
-          <!--End of col-6-->
-
-          <div class="col-6">
-            <!--Place image far left-->
-            <img src="img/pompompurin2.png" alt="pom1" width="90%" style="margin-left: 30px;"/>
-          </div>
-          <!--End of col-6-->
-        </div>
-        <!--End of row2-->
+        <!--End of weather-->
+        <small> <a href="https://github.com/jyin12/Vanilla-Weather-App" target="_blank" class="source">Open-source</a> code by Jiayi Yin </small>
       </div>
-      <!--End of weather-->
-      <small> <a href="https://github.com/jyin12/Vanilla-Weather-App" target="_blank" class="source">Open-source</a> code by Jiayi Yin </small>
+      <!--End of weather-wrapper-->
     </div>
     <!--End of container-->
 
